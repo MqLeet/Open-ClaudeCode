@@ -115,7 +115,7 @@ $env:ANTHROPIC_API_KEY="sk-ant-..."  # PowerShell
 node package/cli.js
 
 # 方式三：第三方代理（国内推荐）
-# 创建配置文件 my-settings.json：
+# 创建配置文件 settings.json：
 # {
 #   "env": {
 #     "ANTHROPIC_BASE_URL": "https://你的代理地址",
@@ -123,7 +123,7 @@ node package/cli.js
 #   }
 # }
 # 然后运行：
-node package/cli.js --settings my-settings.json
+node package/cli.js --settings settings.json
 ```
 
 ---
@@ -194,7 +194,7 @@ node package/cli.js -r <session-id>
 1. 创建配置文件：
 
 ```json
-// my-settings.json
+// settings.json
 {
   "env": {
     "ANTHROPIC_BASE_URL": "https://你的代理地址",
@@ -206,7 +206,7 @@ node package/cli.js -r <session-id>
 2. 运行时加载配置：
 
 ```bash
-node package/cli.js --settings my-settings.json
+node package/cli.js --settings settings.json
 ```
 
 #### 方式二：通过环境变量（临时）
@@ -377,7 +377,7 @@ node package/cli.js
 A: 在交互模式下输入 `/cost` 或 `/stats` 查看。
 
 ### Q: 如何配置第三方代理或自定义 API？
-A: 创建 `my-settings.json` 文件，内容如下：
+A: 创建 `settings.json` 文件，内容如下：
 ```json
 {
   "env": {
@@ -386,7 +386,7 @@ A: 创建 `my-settings.json` 文件，内容如下：
   }
 }
 ```
-然后运行 `node package/cli.js --settings my-settings.json`。也可以放到 `~/.claude/settings.json` 实现全局配置。
+然后运行 `node package/cli.js --settings settings.json`。也可以放到 `~/.claude/settings.json` 实现全局配置。
 
 ### Q: 可以在任何目录运行吗？
 A: 可以！但建议在你的项目目录下运行，这样 Claude 可以访问项目文件。
